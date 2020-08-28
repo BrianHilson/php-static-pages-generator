@@ -174,8 +174,8 @@ class BlogGenerator
   }
 
   private function UpdateBlogPostsData($markdownFilename) {
-    $processedMarkdownFileArray = $this->ProcessMarkdownFileAsPHP($markdownFilename);
-    $blogPostData = $this->GenerateBlogPostData($markdownFilename, $processedMarkdownFileArray);
+    $processedMarkdownFile = $this->ProcessMarkdownFileAsPHP($markdownFilename);
+    $blogPostData = $this->GenerateBlogPostData($markdownFilename, $processedMarkdownFile);
     $this->UpdateCurrentBlogPostsData($markdownFilename, $blogPostData);
   }
 
@@ -346,25 +346,5 @@ class BlogGenerator
     });
 
     return $blogData;
-  }
-
-  public function UpdateSiteMap()
-  {
-    $blogPosts = $this->GetCurrentBlogPostData();
-
-    $website_url = $_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER['SERVER_NAME'];
-
-    $links = array();
-    $links[] = $website_url;
-
-    foreach($blogPosts as $post)
-    {
-      $links[] = $website_url . $post['metaData']['link'];
-    }
-
-    foreach($links as $link)
-    {
-      echo $link . '<br>';
-    }
   }
 }

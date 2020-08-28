@@ -25,7 +25,7 @@ example-website
       └── static-pages-generator.php
 ```
 
-**website** is the root folder for the website. In PHP, you could reference this with `$_SERVER['DOCUMENT_ROOT']`.
+**website** is the root folder for the website. In PHP, you would reference this with `$_SERVER['DOCUMENT_ROOT']`.
 
 **harry-potter-blog** is where the static pages will be generated.
 
@@ -44,7 +44,7 @@ You can test it out by spinning up a PHP server, with example-website as the doc
 1. Unzip example-website.zip
 2. `cd` to example-website
 3. Run `php -S localhost:8000`, which spins up a PHP server.
-4. Go to [http://localhost:8000/](http://localhost:8000/)
+4. Go to [http://localhost:8000/](http://localhost:8000/) in your browser.
 
 The static page generating code is on index.php, so the work of generating static pages should be complete. The file structure will now look like this:
 
